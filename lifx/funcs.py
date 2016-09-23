@@ -1,27 +1,54 @@
+
+
 __author__ = 'vishi'
 from lifxlan import *
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 def discovery():
     import sqlite3
-    import os
     import sys
 
-    def dict_factory(cursor, row):
-        d = {}
-        for idx, col in enumerate(cursor.description):
-            d[col[0]] = row[idx]
-        return d
-    sqlite_file = 'db/db.sqlite'
-    conn = sqlite3.connect(sqlite_file)
-    conn.row_factory = dict_factory
-    cursor = conn.cursor()
-    print "Opened database successfully";
-    cursor.execute('''SELECT bulb_id, mac, name, ip, port, power, reachable FROM bulbs''')
-    bulbs =[]
-    for row in cursor.fetchall():
-        bulb_id, mac, name, ip, port, power, reachable = row
-        bulbs.append(row)
+    # def dict_factory(cursor, row):
+    #     d = {}
+    #     for idx, col in enumerate(cursor.description):
+    #         d[col[0]] = row[idx]
+    #     return d
+    ###########################################
+    # sqlite_file = 'db/db.sqlite'
+    # conn = sqlite3.connect(sqlite_file)
+    # conn.row_factory = dict_factory
+    # cursor = conn.cursor()
+    ##########################################
 
-    for b in bulbs:
+    db = create_engine('sqlite:///db/db.sqlite')
+    db.echo = True  # We want to see the SQL we're creating
+    Base = automap_base()
+    Base.prepare(db, reflect=True)
+
+    bulbs = Base.classes.bulbs
+
+    session = sessionmaker()
+    session.configure(bind=db)
+    bulbs_session = session()
+    our_bulb = bulbs_session.query(bulbs)
+    bulbs_list_result = bulbs_session.execute(our_bulb).fetchall()
+    bulbs_session.commit()
+
+    print '::::::',bulbs_list_result
+    my_bulbs = []
+    for row in bulbs_list_result:
+        my_bulbs.append({'bulb_id': row[0], 'mac': row[1], 'name': row[2], 'ip': row[3], 'port': row[4], 'power': row[5], 'reachable': row[6]})
+
+    # print "Opened database successfully";
+    # cursor.execute('''SELECT bulb_id, mac, name, ip, port, power, reachable FROM bulbs''')
+    # bulbs =[]
+    # for row in cursor.fetchall():
+    #     bulb_id, mac, name, ip, port, power, reachable = row
+    #     bulbs.append(row)
+
+    for b in my_bulbs:
          print b['bulb_id'],b['mac'],b['name'],b['ip'],b['port'],b['power'],b['reachable']
 
     num_lights = None
@@ -42,17 +69,39 @@ def discovery():
     devices = lifx.get_lights()
     print "\nFound {} light(s):\n".format(len(devices))
     for d in devices:
-        cursor.execute("SELECT mac FROM bulbs WHERE mac = ?", (d.get_mac_addr(),))
-        data=cursor.fetchone()
+        our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == d.get_mac_addr()).first()
+        light = Light(d.get_mac_addr(), d.get_ip_addr())
+        hsbk = light.get_color()
+        print hsbk[0]
+        data=our_bulb
         if data is None:
             print 'There is no bulb with mac %s'%d.get_mac_addr()
             print "Inserting: ",d.get_mac_addr(),d.get_label(),d.get_ip_addr(),d.get_port(),d.get_power(),1
-            cursor.execute('''INSERT INTO bulbs(mac,name,ip,port,power,reachable)
-                          VALUES(?,?,?,?,?,?)''', (d.get_mac_addr(),d.get_label(),d.get_ip_addr(),d.get_port(),d.get_power(),1))
+            bulb=bulbs(mac=d.get_mac_addr(),
+                        name=d.get_label(),
+                        ip=d.get_ip_addr(),
+                        port=d.get_port(),
+                        power=d.get_power(),
+                        reachable=1,
+                        h=hsbk[0],
+                        s=hsbk[1],
+                        b=hsbk[2],
+                        k=hsbk[3]
+                        )
+            bulbs_session.add(bulb)
+            #bulbs_session.commit()
         else:
             print 'Bulb found, updating',(d.get_mac_addr())
-            cursor.execute('''UPDATE bulbs set name=?,ip=?,port=?,power=?,reachable=? WHERE mac=?''',
-                          (d.get_label(),d.get_ip_addr(),d.get_port(),d.get_power(),1,d.get_mac_addr()))
-        print d
-    conn.commit()
-    cursor.close()
+            our_bulb.name=d.get_label()
+            our_bulb.ip=d.get_ip_addr()
+            our_bulb.port=d.get_port()
+            our_bulb.power=d.get_power()
+            our_bulb.reachable=1
+        bulbs_session.commit()
+
+    bulbs_session.close_all()
+            # cursor.execute('''UPDATE bulbs set name=?,ip=?,port=?,power=?,reachable=? WHERE mac=?''',
+            #               (d.get_label(),d.get_ip_addr(),d.get_port(),d.get_power(),1,d.get_mac_addr()))
+        #print d
+    # conn.commit()
+    # cursor.close()
