@@ -22,7 +22,7 @@ def discovery():
     # cursor = conn.cursor()
     ##########################################
 
-    db = create_engine('sqlite:///db/db.sqlite')
+    db = create_engine('sqlite:///db.sqlite')
     db.echo = True  # We want to see the SQL we're creating
     Base = automap_base()
     Base.prepare(db, reflect=True)
