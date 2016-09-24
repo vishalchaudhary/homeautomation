@@ -72,7 +72,7 @@ def discovery():
         our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == d.get_mac_addr()).first()
         light = Light(d.get_mac_addr(), d.get_ip_addr())
         hsbk = light.get_color()
-        print hsbk[0]
+        print hsbk
         data=our_bulb
         if data is None:
             print 'There is no bulb with mac %s'%d.get_mac_addr()
@@ -97,6 +97,10 @@ def discovery():
             our_bulb.port=d.get_port()
             our_bulb.power=d.get_power()
             our_bulb.reachable=1
+            our_bulb.h=hsbk[0]
+            our_bulb.s=hsbk[1]
+            our_bulb.b=hsbk[2]
+            our_bulb.k=hsbk[3]
         bulbs_session.commit()
 
     bulbs_session.close_all()
