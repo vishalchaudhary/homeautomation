@@ -61,9 +61,10 @@ def schedule_bulb_check(self):
     for row in bulbs_list_result:
         print '###########################'
         print type(row)
+        d = dict(row.items())
         #my_bulbs.append({'bulb_id': row[0], 'mac': row[1], 'name': row[2], 'ip': row[3], 'port': row[4], 'power': row[5], 'reachable': row[6]})
         print 'Setting up individual bulb update tasks...'
-        updateBulbStatus.apply_async(args=[row])
+        updateBulbStatus.apply_async(args=[d])
         print "Task scheduled for :",row[0]," : ",row[3]
     return 'success'
     # print "Opened database successfully";
