@@ -11,6 +11,7 @@ BROKER_URL = 'sqla+sqlite:///celerydb.sqlite'
 app = Celery('tasks', broker=BROKER_URL)  #amqp://guest@localhost//
 app.conf.update(
     CELERYBEAT_SCHEDULE = {
+
         'update-every-30-seconds': {
             'task': 'tasks.schedule_bulb_check',
             'schedule': timedelta(seconds=30),
@@ -18,6 +19,7 @@ app.conf.update(
     },
     CELERY_TIMEZONE = 'Asia/Kolkata'
 )
+CELERY_TASK_SERIALIZER = 'json'
 
 # DB Connection Optimization
 ###################################################################
