@@ -59,6 +59,8 @@ def schedule_bulb_check(self):
     print '::::::',bulbs_list_result
     #my_bulbs = []
     for row in bulbs_list_result:
+        print '###########################'
+        print type(row)
         #my_bulbs.append({'bulb_id': row[0], 'mac': row[1], 'name': row[2], 'ip': row[3], 'port': row[4], 'power': row[5], 'reachable': row[6]})
         print 'Setting up individual bulb update tasks...'
         updateBulbStatus.apply_async(args=[row])
@@ -81,6 +83,7 @@ def updateBulbStatus(self, row):
         #our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
         our_bulb=row
         print '>>>', our_bulb
+        print type(our_bulb)
         light = Light(str(row[1]),str(row[3]))
         hsbk = light.get_color()
         our_bulb.port = light.get_port()
