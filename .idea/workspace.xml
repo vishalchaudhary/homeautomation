@@ -4,8 +4,6 @@
     <list default="true" id="9f824eec-a45b-4b03-9454-93e175256580" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lifx/funcs.py" afterPath="$PROJECT_DIR$/lifx/funcs.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeautomation.py" afterPath="$PROJECT_DIR$/homeautomation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.py" afterPath="$PROJECT_DIR$/tasks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="homeautomation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +17,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/homeautomation$homeautomation.coverage" NAME="homeautomation Coverage Results" MODIFIED="1474824863163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/homeautomation$homeautomation.coverage" NAME="homeautomation Coverage Results" MODIFIED="1474866994327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -34,10 +32,8 @@
         <entry file="file://$PROJECT_DIR$/homeautomation.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="8" selection-start-column="25" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#58#0" expanded="true" />
-              </folding>
+              <caret line="123" column="4" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,14 +48,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="funcs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="funcs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.71206224">
+              <caret line="103" column="13" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
               <folding>
-                <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-                <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+                <element signature="e#63#84#0" expanded="true" />
+                <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+                <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
               </folding>
             </state>
           </provider>
@@ -75,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tasks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.7171904">
+            <state vertical-scroll-proportion="0.0">
               <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding>
                 <element signature="e#21#46#0" expanded="true" />
@@ -108,9 +105,9 @@
         <option value="$PROJECT_DIR$/lifx/views.py" />
         <option value="$PROJECT_DIR$/celeryconfig.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/tasks.py" />
         <option value="$PROJECT_DIR$/homeautomation.py" />
         <option value="$PROJECT_DIR$/lifx/funcs.py" />
-        <option value="$PROJECT_DIR$/tasks.py" />
       </list>
     </option>
   </component>
@@ -488,9 +485,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -507,8 +502,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
-            <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -517,9 +513,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,6 +529,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -568,8 +563,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -578,9 +574,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -596,6 +590,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -629,8 +624,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
           <folding>
-            <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -639,9 +635,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -649,6 +643,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -682,8 +677,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -699,6 +695,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -733,16 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/homeautomation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="8" selection-start-column="25" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lifx/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -751,23 +738,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
+    <entry file="file://$PROJECT_DIR$/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="35" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding>
-            <marker date="1474823631000" expanded="true" signature="1395:1459" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474823631000" expanded="true" signature="3962:4029" placeholder="UPDATE bulbs..." />
+            <element signature="e#21#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasks.py">
+    <entry file="file://$PROJECT_DIR$/homeautomation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7171904">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="123" column="4" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71206224">
+          <caret line="103" column="13" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
           <folding>
-            <element signature="e#21#46#0" expanded="true" />
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474866991000" expanded="true" signature="1396:1460" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474866991000" expanded="true" signature="3965:4032" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
