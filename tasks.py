@@ -59,6 +59,7 @@ def init_worker(**kwargs):
                      user="root",         # your username
                      passwd="homeautomation",  # your password
                      db="homeautomation")
+    conn.autocommit(True)
     conn.row_factory = dict_factory
 
     # import sqlite3
