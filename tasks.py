@@ -58,13 +58,13 @@ def schedule_bulb_check(self):
 
     print '::::::',bulbs_list_result
     #my_bulbs = []
-    for row in bulbs_list_result:
+    for row in session.query(bulbs).all():
         print '###########################'
         print type(row)
-        d = dict(row.items())
+        #d = dict(row.items())
         #my_bulbs.append({'bulb_id': row[0], 'mac': row[1], 'name': row[2], 'ip': row[3], 'port': row[4], 'power': row[5], 'reachable': row[6]})
         print 'Setting up individual bulb update tasks...'
-        updateBulbStatus.apply_async(args=[d])
+        updateBulbStatus.apply_async(args=[row])
         print "Task scheduled for :",row[0]," : ",row[3]
     return 'success'
     # print "Opened database successfully";
@@ -78,11 +78,11 @@ def schedule_bulb_check(self):
     #bulbs_session.close_all()
 
 @app.task(bind=True, max_retries = None)
-def updateBulbStatus(self, row):
+def updateBulbStatus(self, our_bulb):
     bulbs_session = session()
     try:
         #our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
-        our_bulb=row
+        #our_bulb=row
         print '>>>', our_bulb
         print type(our_bulb)
         light = Light(str(row[1]),str(row[3]))
