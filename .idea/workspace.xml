@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f824eec-a45b-4b03-9454-93e175256580" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/celerybeat-schedule.db" afterPath="$PROJECT_DIR$/celerybeat-schedule.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lifx/funcs.py" afterPath="$PROJECT_DIR$/lifx/funcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/homeautomation.py" afterPath="$PROJECT_DIR$/homeautomation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks.py" afterPath="$PROJECT_DIR$/tasks.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="homeautomation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="homeautomation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homeautomation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/homeautomation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19408503">
+            <state vertical-scroll-proportion="0.0">
               <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -44,15 +41,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="funcs.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="funcs.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.60998154">
+              <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
               <folding>
                 <element signature="e#63#84#0" expanded="true" />
-                <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-                <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+                <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+                <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
               </folding>
             </state>
           </provider>
@@ -82,12 +79,12 @@
         <entry file="file://$PROJECT_DIR$/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="35" selection-start-line="57" selection-start-column="0" selection-end-line="61" selection-end-column="35" />
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#21#46#0" expanded="true" />
-                <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-                <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-                <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+                <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+                <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+                <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
               </folding>
             </state>
           </provider>
@@ -115,9 +112,9 @@
         <option value="$PROJECT_DIR$/celeryconfig.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/db-query.py" />
+        <option value="$PROJECT_DIR$/homeautomation.py" />
         <option value="$PROJECT_DIR$/tasks.py" />
         <option value="$PROJECT_DIR$/lifx/funcs.py" />
-        <option value="$PROJECT_DIR$/homeautomation.py" />
       </list>
     </option>
   </component>
@@ -493,8 +490,8 @@
           <caret line="70" column="16" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="16" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -513,9 +510,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
@@ -536,8 +533,8 @@
           <caret line="103" column="13" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -556,9 +553,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
@@ -579,8 +576,8 @@
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -616,9 +613,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
@@ -636,8 +633,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -673,9 +670,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
@@ -693,8 +690,8 @@
           <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -730,9 +727,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
@@ -750,8 +747,8 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>
@@ -800,37 +797,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="e#63#84#0" expanded="true" />
-            <marker date="1474892409000" expanded="true" signature="1428:1492" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474892409000" expanded="true" signature="3997:4064" placeholder="UPDATE bulbs..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="35" selection-start-line="57" selection-start-column="0" selection-end-line="61" selection-end-column="35" />
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="e#21#46#0" expanded="true" />
-            <marker date="1474891850000" expanded="true" signature="3232:3309" placeholder="SELECT bulb_..bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4223:4318" placeholder="update bulbs..." />
-            <marker date="1474891850000" expanded="true" signature="4703:4749" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="3231:3308" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4222:4317" placeholder="update bulbs..." />
+            <marker date="1474893354000" expanded="true" signature="4702:4748" placeholder="update bulbs..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homeautomation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19408503">
+        <state vertical-scroll-proportion="0.0">
           <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lifx/funcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60998154">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding>
+            <element signature="e#63#84#0" expanded="true" />
+            <marker date="1474893374000" expanded="true" signature="1443:1507" placeholder="SELECT bulb_..bulbs..." />
+            <marker date="1474893374000" expanded="true" signature="4012:4079" placeholder="UPDATE bulbs..." />
           </folding>
         </state>
       </provider>

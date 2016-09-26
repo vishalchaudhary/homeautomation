@@ -20,7 +20,7 @@ def discovery():
     # cursor = conn.cursor()
     ##########################################
 
-    db = create_engine('mysql+pymysql://root@127.0.0.1/homeautomation?host=127.0.0.1?port=3306')
+    db = create_engine('mysql+pymysql://root:homeautomation@127.0.0.1/homeautomation?host=127.0.0.1?port=3306')
     db.echo = True  # We want to see the SQL we're creating
     Base = automap_base()
     Base.prepare(db, reflect=True)
