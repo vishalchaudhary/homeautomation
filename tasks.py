@@ -52,11 +52,11 @@ def init_worker(**kwargs):
 def schedule_bulb_check(self):
     bulbs_session = session()
     print 'Scheduling Bulb Status Update Tasks'
-    our_bulbs = bulbs_session.query(bulbs)
-    bulbs_list_result = bulbs_session.execute(our_bulbs).fetchall()
-    bulbs_session.commit()
+    #our_bulbs = bulbs_session.query(bulbs)
+    #bulbs_list_result = bulbs_session.execute(our_bulbs).fetchall()
+    #bulbs_session.commit()
 
-    print '::::::',bulbs_list_result
+    #print '::::::',bulbs_list_result
     #my_bulbs = []
     for row in session.query(bulbs).all():
         print '###########################'
