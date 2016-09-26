@@ -16,7 +16,7 @@ app.conf.update(
 
         'update-every-30-seconds': {
             'task': 'tasks.schedule_bulb_check',
-            'schedule': timedelta(seconds=30),
+            'schedule': timedelta(seconds=5),
         },
     },
     CELERY_TIMEZONE='Asia/Kolkata',
