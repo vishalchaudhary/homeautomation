@@ -19,8 +19,7 @@ app = Celery('tasks', broker=BROKER_URL)  #amqp://guest@localhost//
 CELERYBEAT_SCHEDULE = {
     'update-every-30-seconds': {
         'task': 'tasks.schedule_bulb_check',
-        'schedule': timedelta(seconds=60),
-        'args': (16, 16)
+        'schedule': timedelta(seconds=10),
     },
 }
 CELERY_TIMEZONE = 'Asia/Kolkata'
