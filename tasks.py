@@ -13,7 +13,7 @@ app.conf.update(
     CELERYBEAT_SCHEDULE = {
         'update-every-30-seconds': {
             'task': 'tasks.schedule_bulb_check',
-            'schedule': timedelta(seconds=10),
+            'schedule': timedelta(seconds=30),
         },
     },
     CELERY_TIMEZONE = 'Asia/Kolkata'
@@ -93,7 +93,7 @@ def updateBulbStatus(self, row):
         print light
     except Exception:
         #pass
-        #our_bulb.reachable=0
+        our_bulb.reachable=0
         print 'Bulb '+row[2]+' : '+row[1]+' : '+row[3]+' not reachable'
     finally:
         bulbs_session.commit()
