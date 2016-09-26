@@ -9,20 +9,16 @@ from datetime import timedelta
 
 BROKER_URL = 'sqla+sqlite:///celerydb.sqlite'
 app = Celery('tasks', broker=BROKER_URL)  #amqp://guest@localhost//
-# app.conf.update(
-#     #CELERY_TASK_SERIALIZER='json',
-#     #CELERY_ACCEPT_CONTENT=['json'],  # Ignore other content
-#     #CELERY_RESULT_SERIALIZER='json',
-#     #CELERY_TIMEZONE='Europe/Oslo',
-#     #CELERY_ENABLE_UTC=True,
-# )
-CELERYBEAT_SCHEDULE = {
-    'update-every-30-seconds': {
-        'task': 'tasks.schedule_bulb_check',
-        'schedule': timedelta(seconds=10),
+app.conf.update(
+    CELERYBEAT_SCHEDULE = {
+        'update-every-30-seconds': {
+            'task': 'tasks.schedule_bulb_check',
+            'schedule': timedelta(seconds=10),
+        },
     },
-}
-CELERY_TIMEZONE = 'Asia/Kolkata'
+    CELERY_TIMEZONE = 'Asia/Kolkata'
+)
+
 # DB Connection Optimization
 ###################################################################
 session = None
