@@ -1,2 +1,6 @@
 
 db.sqlite
+
+*.pyc
+
+*.pyc

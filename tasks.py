@@ -6,19 +6,21 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from datetime import timedelta
+import MySQLdb
 
-BROKER_URL = 'sqla+sqlite:///celerydb.sqlite'
-app = Celery('tasks', broker=BROKER_URL)  #amqp://guest@localhost//
+# BROKER_URL = 'sqla+mysql://root:homeautomation@127.0.0.1/celery'
+BROKER_URL = 'sqla+mysql://root@127.0.0.1/celery'
+app = Celery('tasks', broker=BROKER_URL)  # amqp://guest@localhost//
 app.conf.update(
-    CELERYBEAT_SCHEDULE = {
+    CELERYBEAT_SCHEDULE={
 
         'update-every-30-seconds': {
             'task': 'tasks.schedule_bulb_check',
             'schedule': timedelta(seconds=30),
         },
     },
-    CELERY_TIMEZONE = 'Asia/Kolkata',
-    CELERY_TASK_SERIALIZER = 'json'
+    CELERY_TIMEZONE='Asia/Kolkata',
+    CELERY_TASK_SERIALIZER='json'
 )
 
 
@@ -29,11 +31,12 @@ bulbs = None
 db = None
 conn = None
 
+
 def dict_factory(cursor, row):
-        d = {}
-        for idx, col in enumerate(cursor.description):
-            d[col[0]] = row[idx]
-        return d
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
 
 
 @worker_process_init.connect
@@ -51,16 +54,22 @@ def init_worker(**kwargs):
     # session = sessionmaker()
     # session.configure(bind=db)
 
-    import sqlite3
-    import sys
-   
-    ##########################################
-    sqlite_file = 'db.sqlite'
-    conn = sqlite3.connect(sqlite_file)
-    conn.row_factory = dict_factory
-    
-    #########################################
 
+    conn = MySQLdb.connect(host="127.0.0.1",    # your host, usually localhost
+                     user="root",         # your username
+                     #passwd="homeautomation",  # your password
+                     db="homeautomation")
+    conn.row_factory = dict_factory
+
+    # import sqlite3
+    # import sys
+    #
+    # ##########################################
+    # sqlite_file = 'db.sqlite'
+    # conn = sqlite3.connect(sqlite_file)
+    # conn.row_factory = dict_factory
+
+    #########################################
 
 
 # @worker_process_shutdown.connect
@@ -70,16 +79,16 @@ def init_worker(**kwargs):
 #         print('Closing database connection for worker.')
 
 ###################################################################
-@app.task(bind=True, max_retries = None)
+@app.task(bind=True, max_retries=None)
 def schedule_bulb_check(self):
-   # bulbs_session = session()
+    # bulbs_session = session()
     print 'Scheduling Bulb Status Update Tasks'
-    #our_bulbs = bulbs_session.query(bulbs)
-    #bulbs_list_result = bulbs_session.execute(our_bulbs).fetchall()
-    #bulbs_session.commit()
+    # our_bulbs = bulbs_session.query(bulbs)
+    # bulbs_list_result = bulbs_session.execute(our_bulbs).fetchall()
+    # bulbs_session.commit()
 
-    #print '::::::',bulbs_list_result
-    #my_bulbs = []
+    # print '::::::',bulbs_list_result
+    # my_bulbs = []
     # for row in bulbs_session.query(bulbs).all():
     #     print '###########################'
     #     print type(row)
@@ -92,25 +101,26 @@ def schedule_bulb_check(self):
     print "Opened database successfully";
     cursor = conn.cursor();
     cursor.execute('''SELECT bulb_id, mac, name, ip, port, power, reachable, h, s , b, k FROM bulbs''')
-   # bulbs =[]
+    # bulbs =[]
     for row in cursor.fetchall():
-       # bulb_id, mac, name, ip, port, power, reachable = row
+        # bulb_id, mac, name, ip, port, power, reachable = row
         print row
-        #bulbs.append(row)
+        # bulbs.append(row)
         updateBulbStatus.apply_async(args=[row])
     cursor.close()
 
-@app.task(bind=True, max_retries = None)
+
+@app.task(bind=True, max_retries=None)
 def updateBulbStatus(self, our_bulb):
-    #bulbs_session = session()
+    # bulbs_session = session()
     cursor = conn.cursor();
     try:
-        #our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
-        #our_bulb=row
+        # our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
+        # our_bulb=row
 
         # print '>>>', our_bulb
         # print type(our_bulb)
-        light = Light(our_bulb['mac'],our_bulb['ip'])
+        light = Light(our_bulb['mac'], our_bulb['ip'])
         hsbk = light.get_color()
         our_bulb['port'] = light.get_port()
         our_bulb['power'] = light.get_power()
@@ -120,24 +130,24 @@ def updateBulbStatus(self, our_bulb):
         our_bulb['b'] = hsbk[2]
         our_bulb['k'] = hsbk[3]
 
-       
-        query = "update bulbs set port={0}, power={1}, reachable={2}, h={3}, s={4}, b={5}, k={6} where mac='{7}'".format(our_bulb['port'],our_bulb['power'], our_bulb['reachable'], 
-            our_bulb['h'],our_bulb['s'], our_bulb['b'], our_bulb['k'],  our_bulb['mac'] )
+        query = "update bulbs set port={0}, power={1}, reachable={2}, h={3}, s={4}, b={5}, k={6} where mac='{7}'".format(
+            our_bulb['port'], our_bulb['power'], our_bulb['reachable'],
+            our_bulb['h'], our_bulb['s'], our_bulb['b'], our_bulb['k'], our_bulb['mac'])
         print query
-      
+
 
         # print 'Bulb found, updating' + row[2] + ' : ' + row[1] + ' : ' + row[3]
         # print light
     except Exception:
-        #pass
-        our_bulb['reachable']=0
-        query = "update bulbs set reachable={0} where mac='{1}'".format(0, our_bulb['mac'] )
+        # pass
+        our_bulb['reachable'] = 0
+        query = "update bulbs set reachable={0} where mac='{1}'".format(0, our_bulb['mac'])
         print query
-        #cursor.execute(query);
+        # cursor.execute(query);
 
-        #print 'Bulb '+row[2]+' : '+row[1]+' : '+row[3]+' not reachable'
+        # print 'Bulb '+row[2]+' : '+row[1]+' : '+row[3]+' not reachable'
     finally:
         cursor.execute(query);
         cursor.close()
-        #bulbs_session.commit()
+        # bulbs_session.commit()
     return 'success'

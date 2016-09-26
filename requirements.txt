@@ -2,6 +2,8 @@ Flask==0.11.1
 Flask-SocketIO==2.7.1
 Jinja2==2.8
 MarkupSafe==0.23
+MySQL-python==1.2.5
+PyMySQL==0.7.9
 SQLAlchemy==1.0.15
 Werkzeug==0.11.11
 amqp==1.4.9
@@ -16,6 +18,7 @@ greenlet==0.4.10
 itsdangerous==0.24
 kombu==3.0.35
 lifxlan==0.3.0
+mysql-connector==2.1.4
 pysqlite==2.8.3
 python-engineio==1.0.3
 python-socketio==1.5.1

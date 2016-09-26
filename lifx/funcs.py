@@ -7,7 +7,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 def discovery():
-    import sqlite3
     import sys
     # def dict_factory(cursor, row):
     #     d = {}
@@ -21,7 +20,7 @@ def discovery():
     # cursor = conn.cursor()
     ##########################################
 
-    db = create_engine('sqlite:///db.sqlite')
+    db = create_engine('mysql+pymysql://root@127.0.0.1/homeautomation?host=127.0.0.1?port=3306')
     db.echo = True  # We want to see the SQL we're creating
     Base = automap_base()
     Base.prepare(db, reflect=True)
