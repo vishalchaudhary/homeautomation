@@ -17,9 +17,10 @@ app.conf.update(
             'schedule': timedelta(seconds=30),
         },
     },
-    CELERY_TIMEZONE = 'Asia/Kolkata'
+    CELERY_TIMEZONE = 'Asia/Kolkata',
+    CELERY_TASK_SERIALIZER = 'json'
 )
-CELERY_TASK_SERIALIZER = 'json'
+
 
 # DB Connection Optimization
 ###################################################################
