@@ -4,3 +4,5 @@ db.sqlite
 *.pyc
 
 celerybeat-schedule.db
+
+*.sql

@@ -125,7 +125,7 @@ def updateBulbStatus(self, our_bulb):
         hsbk = light.get_color()
         our_bulb['port'] = light.get_port()
         our_bulb['power'] = light.get_power()
-        our_bulb['reachable'] = True
+        our_bulb['reachable'] = 1
         our_bulb['h'] = hsbk[0]
         our_bulb['s'] = hsbk[1]
         our_bulb['b'] = hsbk[2]
@@ -143,7 +143,7 @@ def updateBulbStatus(self, our_bulb):
         # print light
     except Exception:
         # pass
-        our_bulb['reachable'] = False
+        our_bulb['reachable'] = 0
         query = "update bulbs set reachable={0} where mac='{1}'".format(0, our_bulb['mac'])
         print query
 	cursor.execute(query);
