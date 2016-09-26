@@ -57,7 +57,7 @@ def init_worker(**kwargs):
 
     conn = MySQLdb.connect(host="127.0.0.1",    # your host, usually localhost
                      user="root",         # your username
-                     #passwd="homeautomation",  # your password
+                     passwd="homeautomation",  # your password
                      db="homeautomation")
     conn.row_factory = dict_factory
 
