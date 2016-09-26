@@ -106,14 +106,15 @@ def schedule_bulb_check(self):
         # bulb_id, mac, name, ip, port, power, reachable = row
         print row
         # bulbs.append(row)
-        updateBulbStatus.apply_async(args=[row])
+        updateBulbStatus.apply_async(args=[dict_factory(cursor,row)])
     cursor.close()
 
 
 @app.task(bind=True, max_retries=None)
 def updateBulbStatus(self, our_bulb):
     # bulbs_session = session()
-    cursor = conn.cursor();
+    cursor = conn.cursor()
+    query = None
     try:
         # our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
         # our_bulb=row
@@ -124,7 +125,7 @@ def updateBulbStatus(self, our_bulb):
         hsbk = light.get_color()
         our_bulb['port'] = light.get_port()
         our_bulb['power'] = light.get_power()
-        our_bulb['reachable'] = 1
+        our_bulb['reachable'] = True
         our_bulb['h'] = hsbk[0]
         our_bulb['s'] = hsbk[1]
         our_bulb['b'] = hsbk[2]
@@ -134,20 +135,21 @@ def updateBulbStatus(self, our_bulb):
             our_bulb['port'], our_bulb['power'], our_bulb['reachable'],
             our_bulb['h'], our_bulb['s'], our_bulb['b'], our_bulb['k'], our_bulb['mac'])
         print query
+	cursor.execute(query);
+        cursor.close()
 
 
         # print 'Bulb found, updating' + row[2] + ' : ' + row[1] + ' : ' + row[3]
         # print light
     except Exception:
         # pass
-        our_bulb['reachable'] = 0
+        our_bulb['reachable'] = False
         query = "update bulbs set reachable={0} where mac='{1}'".format(0, our_bulb['mac'])
         print query
+	cursor.execute(query);
+        cursor.close()
         # cursor.execute(query);
 
         # print 'Bulb '+row[2]+' : '+row[1]+' : '+row[3]+' not reachable'
-    finally:
-        cursor.execute(query);
-        cursor.close()
         # bulbs_session.commit()
     return 'success'
