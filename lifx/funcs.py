@@ -1,4 +1,4 @@
-
+from homeautomation import send_message
 
 __author__ = 'vishi'
 from lifxlan import *
@@ -9,7 +9,6 @@ from sqlalchemy.orm import sessionmaker
 def discovery():
     import sqlite3
     import sys
-
     # def dict_factory(cursor, row):
     #     d = {}
     #     for idx, col in enumerate(cursor.description):
@@ -89,6 +88,7 @@ def discovery():
                         k=hsbk[3]
                         )
             bulbs_session.add(bulb)
+            send_message("Bulb Added")
             #bulbs_session.commit()
         else:
             print 'Bulb found, updating',(d.get_mac_addr())
@@ -101,6 +101,7 @@ def discovery():
             our_bulb.s=hsbk[1]
             our_bulb.b=hsbk[2]
             our_bulb.k=hsbk[3]
+            send_message('Bulb updated HHHHHHHHH')
         bulbs_session.commit()
 
     bulbs_session.close_all()

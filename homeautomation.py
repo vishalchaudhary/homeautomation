@@ -1,14 +1,14 @@
 from flask import Flask, render_template, session, request
 from flask_socketio import SocketIO, emit, join_room, leave_room, \
-     close_room, rooms, disconnect
+    close_room, rooms, disconnect
 from lifx import lifx
+
 async_mode = None
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app,async_mode=async_mode)
+socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 app.register_blueprint(lifx, url_prefix='/lifx')
-
 
 
 def background_thread():
@@ -20,9 +20,28 @@ def background_thread():
         socketio.emit('my_response',
                       {'data': 'Server generated event', 'count': count},
                       namespace='/test')
+
+
+def send_message(message):
+    socketio.emit('my_response',
+                  {'data': message, 'count': 1},
+                  namespace='/test')
+    print message+"asdasdasd"
+
+
+# def send_message(message):
+#     """Example of how to send server generated events to clients."""
+#     print message
+#     count = 0
+#     count += 1
+#
+#     socketio.emit('my_response',
+#                   {'data': message, 'count': count},
+#                   namespace='/test')
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 @socketio.on('my_event', namespace='/test')
 def test_message(message):
@@ -33,6 +52,7 @@ def test_message(message):
 
 @socketio.on('my_broadcast_event', namespace='/test')
 def test_broadcast_message(message):
+    print message
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my_response',
          {'data': message['data'], 'count': session['receive_count']},
@@ -99,6 +119,7 @@ def test_connect():
 def test_disconnect():
     print('Client disconnected', request.sid)
 
+
 if __name__ == '__main__':
-    #app.run(debug=False)
+    # app.run(debug=False)
     socketio.run(app)
