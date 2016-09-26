@@ -8,8 +8,8 @@ from sqlalchemy.orm import sessionmaker
 from datetime import timedelta
 import MySQLdb
 
-# BROKER_URL = 'sqla+mysql://root:homeautomation@127.0.0.1/celery'
-BROKER_URL = 'sqla+mysql://root@127.0.0.1/celery'
+BROKER_URL = 'sqla+mysql://root:homeautomation@127.0.0.1/celery'
+#BROKER_URL = 'sqla+mysql://root@127.0.0.1/celery'
 app = Celery('tasks', broker=BROKER_URL)  # amqp://guest@localhost//
 app.conf.update(
     CELERYBEAT_SCHEDULE={
