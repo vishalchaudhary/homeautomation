@@ -58,7 +58,7 @@ def schedule_bulb_check(self):
 
     #print '::::::',bulbs_list_result
     #my_bulbs = []
-    for row in session.query(bulbs).all():
+    for row in bulbs_session.query(bulbs).all():
         print '###########################'
         print type(row)
         #d = dict(row.items())
