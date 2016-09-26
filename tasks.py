@@ -78,7 +78,8 @@ def schedule_bulb_check(self):
 def updateBulbStatus(self, row):
     bulbs_session = session()
     try:
-        our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
+        #our_bulb = bulbs_session.query(bulbs).filter(bulbs.mac == str(row[1])).first()
+        our_bulb=row
         print '>>>', our_bulb
         light = Light(str(row[1]),str(row[3]))
         hsbk = light.get_color()
