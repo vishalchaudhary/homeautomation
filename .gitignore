@@ -3,4 +3,4 @@ db.sqlite
 
 *.pyc
 
-*.pyc
+celerybeat-schedule.db
